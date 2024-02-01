@@ -20,6 +20,11 @@
     "typescript": "^5.0.0"
   },
   "dependencies": {
-    "elysia": "^0.8.15"
+    "@johannwagner/text-to-svg": "^4.0.5",
+    "@kazukinagata/text-to-svg": "^4.2.2",
+    "@types/gm": "^1.25.4",
+    "elysia": "^0.8.15",
+    "gm": "^1.25.0",
+    "sharp": "^0.33.2"
   }
 }
