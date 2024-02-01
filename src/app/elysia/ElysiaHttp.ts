@@ -16,9 +16,9 @@ export class ElysiaHttp implements IHttp {
     return this.context.params as Params
   }
 
-  send<Response>(statusCode: number, response: Response): Response {
+  send<Response>(statusCode: number, response: Response): JSON {
     this.context.set.status = statusCode
 
-    return response
+    return response as JSON
   }
 }

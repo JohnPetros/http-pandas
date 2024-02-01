@@ -1,11 +1,21 @@
+import { routes } from '@routes/index'
 import { IApp } from 'app/interfaces/IApp'
 import { Elysia } from 'elysia'
+import { ElysiaRouter } from './ElysiaRouter'
 
 export class ElysiaApp implements IApp {
   private elysia: Elysia
 
   constructor() {
-    this.elysia = new Elysia()
+    const elysia = new Elysia()
+
+    const elysiaRouter = new ElysiaRouter(elysia)
+
+    routes(elysiaRouter)
+
+    elysia.use(elysiaRouter.getRouterInstance())
+
+    this.elysia = elysia
   }
 
   startServer(port: number, onStart: () => void): void {

@@ -1,20 +1,24 @@
 import { ICrontroller } from 'app/interfaces/ICrontroller'
 import { IRouter } from 'app/interfaces/IRouter'
-import { Elysia as ElysiaInstance } from 'elysia'
+import { Elysia } from 'elysia'
 import { ElysiaHttp } from './ElysiaHttp'
 
 export class ElysiaRouter implements IRouter {
-  private elysia: ElysiaInstance
+  private elysia: Elysia
 
-  constructor(elysia: ElysiaInstance) {
+  constructor(elysia: Elysia) {
     this.elysia = elysia
   }
 
   get(route: string, controller: ICrontroller): void {
     this.elysia.get(route, (context) => {
       const elysiaHttp = new ElysiaHttp(context)
-
-      controller.handle(elysiaHttp)
+      return controller.handle(elysiaHttp)
     })
+  }
+
+  getRouterInstance() {
+    const routerInstance = this.elysia
+    return routerInstance
   }
 }
