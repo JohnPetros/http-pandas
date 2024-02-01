@@ -13,7 +13,7 @@ export class ElysiaApp implements IApp {
 
     routes(elysiaRouter)
 
-    elysia.use(elysiaRouter.getRouterInstance())
+    elysia.use(elysiaRouter.elysia)
 
     this.elysia = elysia
   }

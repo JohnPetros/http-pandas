@@ -4,7 +4,7 @@ import { Elysia } from 'elysia'
 import { ElysiaHttp } from './ElysiaHttp'
 
 export class ElysiaRouter implements IRouter {
-  private elysia: Elysia
+  elysia: Elysia
 
   constructor(elysia: Elysia) {
     this.elysia = elysia
@@ -15,10 +15,5 @@ export class ElysiaRouter implements IRouter {
       const elysiaHttp = new ElysiaHttp(context)
       return controller.handle(elysiaHttp)
     })
-  }
-
-  getRouterInstance() {
-    const routerInstance = this.elysia
-    return routerInstance
   }
 }

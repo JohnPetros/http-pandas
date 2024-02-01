@@ -21,4 +21,8 @@ export class ElysiaHttp implements IHttp {
 
     return response as JSON
   }
+
+  setHeaders(key: string, value: string): void {
+    this.context.set.headers[key] = value
+  }
 }

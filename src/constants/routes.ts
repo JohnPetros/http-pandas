@@ -5,4 +5,5 @@ export const ROUTES = {
     getPandaByStatusCode: '/api/:statusCode',
     getRawPandaByStatusCode: '/api/raw/:statusCode',
   },
+  index: '/',
 }
