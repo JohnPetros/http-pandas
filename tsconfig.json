@@ -22,7 +22,7 @@
     "paths": {
       "@app/*": ["app/*"],
       "@routes/*": ["routes/*"],
-      "@types/*": ["@types/*"],
+      "types/*": ["@types/*"],
       "@constants/*": ["constants/*"],
       "@modules/*": ["modules/*"],
       "@configs/*": ["configs/*"],
