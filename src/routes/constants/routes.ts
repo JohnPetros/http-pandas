@@ -1,9 +1,9 @@
 export const ROUTES = {
   api: {
-    getRandomPandaImage: '/api/random',
-    getRandomPandaRawImage: '/api/raw/random',
-    getPandaImageByStatusCode: '/api/:statusCode',
-    getPandaRawImageByStatusCode: '/api/raw/:statusCode',
+    getRandomPanda: '/api/random',
+    getRandomRawPanda: '/api/raw/random',
+    getPandaByStatusCode: '/api/:statusCode',
+    getRawPandayStatusCode: '/api/raw/:statusCode',
   },
   index: '/',
 }

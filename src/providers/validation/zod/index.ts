@@ -1,5 +1,5 @@
 import { ZodError } from 'zod'
-import { StatusCode } from 'types/StatusCode'
+import { StatusCode } from '@core-types/StatusCode'
 
 import { statusCodeShema } from './schemas/statusCodeSchema'
 import { IValidationProvider } from '../IValidationProvider'

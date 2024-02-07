@@ -1,11 +1,14 @@
-import { GetPandaImageByStatusCodeUseCase } from '../useCases/GetPandaImageByStatusCodeUseCase'
-import { IFactory } from '@app/interfaces/IFactory'
-import { BunFile } from 'bun'
+import type { Panda } from '@core-types/Panda'
+
+import { GetPandaByStatusCodeUseCase } from '../useCases/GetPandaByStatusCodeUseCase'
+import type { GetPandaByStatusCodeRequest } from '../types/GetPandaByStatusCodeRequest'
+
 import { SharpImageProcessingProvider } from '@providers/imageProcessingProvider/sharp'
 import { ZodValidationProvider } from '@providers/validation/zod'
+import { IFactory } from '@app/interfaces/IFactory'
 
-export class GetPandaImageByStatusCodeFactory
-  implements IFactory<number, BunFile>
+export class GetPandaByStatusCodeFactory
+  implements IFactory<GetPandaByStatusCodeRequest, Panda>
 {
   useCase: GetPandaByStatusCodeUseCase
 
@@ -13,7 +16,7 @@ export class GetPandaImageByStatusCodeFactory
     const imageProcessorProvider = new SharpImageProcessingProvider()
     const zodValidationProvider = new ZodValidationProvider()
 
-    this.useCase = new GetPandaImageByStatusCodeUseCase(
+    this.useCase = new GetPandaByStatusCodeUseCase(
       zodValidationProvider,
       imageProcessorProvider,
     )

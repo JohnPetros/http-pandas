@@ -1,10 +1,11 @@
-import type { StatusCode } from 'types/StatusCode'
-import type { StatusMessage } from 'types/StatusMessage'
+import { StatusCode } from '@core-types/StatusCode'
+import { StatusMessage } from '@core-types/StatusMessage'
 
 export const HTTP_STATUS: Record<StatusCode, StatusMessage> = {
   100: 'Continue',
   101: 'Switching Protocols',
   102: 'Processing',
+  103: 'Early hints',
   200: 'OK',
   201: 'Created',
   202: 'Accepted',
@@ -50,7 +51,12 @@ export const HTTP_STATUS: Record<StatusCode, StatusMessage> = {
   428: 'Precondition Required',
   429: 'Too Many Requests',
   431: 'Request Header Fields Too Large',
+  444: 'No response',
+  450: 'Blocked by Windows Parental Controls',
   451: 'Unavailable For Legal Reasons',
+  497: 'HTTP Request Sent to HTTPS Port',
+  498: 'Token expired/invalid',
+  499: 'Client Closed Request',
   500: 'Internal Server Error',
   501: 'Not Implemented',
   502: 'Bad Gateway',
@@ -62,4 +68,10 @@ export const HTTP_STATUS: Record<StatusCode, StatusMessage> = {
   508: 'Loop Detected',
   510: 'Not Extended',
   511: 'Network Authentication Required',
+  521: 'Web Server is Down',
+  522: 'Connection Timed Out',
+  523: 'Origin Is Unreachable',
+  525: 'SSL Handshake Failed',
+  530: 'Site Frozen',
+  599: 'Network Connect Timeout Error',
 } as const
