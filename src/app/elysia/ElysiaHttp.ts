@@ -1,11 +1,13 @@
-import { IHttp } from 'app/interfaces/IHttp'
 import { Context } from 'elysia'
+import { IHttp } from 'app/interfaces/IHttp'
+
+type ElysiaContext = Context & { html: (html: string) => string }
 
 export class ElysiaHttp implements IHttp {
-  private context: Context
+  private context: ElysiaContext
 
   constructor(Context: Context) {
-    this.context = Context
+    this.context = Context as ElysiaContext
   }
 
   getBody<Body>(): Body {
@@ -14,6 +16,10 @@ export class ElysiaHttp implements IHttp {
 
   getParams<Params>(): Params {
     return this.context.params as Params
+  }
+
+  renderView(view: string): string {
+    return this.context.html(view)
   }
 
   send<Response>(statusCode: number, response: Response): JSON {

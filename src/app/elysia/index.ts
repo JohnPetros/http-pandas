@@ -1,7 +1,11 @@
-import { routes } from '@routes/index'
-import { IApp } from 'app/interfaces/IApp'
 import { Context, Elysia } from 'elysia'
+import { html } from '@elysiajs/html'
+
 import { ElysiaRouter } from './ElysiaRouter'
+
+import { IApp } from 'app/interfaces/IApp'
+
+import { routes } from '@routes/index'
 import { AppError } from '@utils/AppError'
 import { VALIDATION_ERRORS } from '@providers/validation/constants/validation-errors'
 
@@ -13,9 +17,11 @@ export class ElysiaApp implements IApp {
 
     const elysiaRouter = new ElysiaRouter(elysia)
 
-    routes(elysiaRouter)
-
     elysia.use(elysiaRouter.elysia)
+
+    elysia.use(html())
+
+    routes(elysiaRouter)
 
     this.elysia = elysia
   }
@@ -39,12 +45,12 @@ export class ElysiaApp implements IApp {
     onStart()
   }
 
-  stopServer(message: string = 'The server is stopped 😴.'): void {
+  stopServer(message = 'The server is stopped 😴.'): void {
     this.elysia
       .stop()
       .then(() => console.log(message))
       .catch((error) =>
-        console.error('The server could not be stopped 😨. ERROR: ' + error),
+        console.error(`The server could not be stopped 😨. ERROR: ${error}`)
       )
   }
 }
