@@ -31,8 +31,7 @@ the goal of developing this project was learn the basic but amazing features of 
 
 <table align="center">
   <tr>
-    <td align="center" width="700">
-    <span>Página da Urna funcionando<br/></span>
+    <td align="center" width="1000">
     <img src=".github/app-preview.gif" alt="Preview of the application" />
     </td>
   </tr>
