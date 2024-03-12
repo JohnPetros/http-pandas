@@ -65,7 +65,7 @@ the goal of developing this project was learn the basic but amazing features of 
 
 ---
 
-## ⚙️ architecture
+## ⚙️ Architecture
 
 ## 🛠️ Technologies and tools
 
@@ -121,7 +121,7 @@ $ bun dev
 
 ## 🚚 Deploy
 
-This application's deploy was made using **[Render plataform](https://dashboard.render.com/)**, which means you can use the running application accessing **[link](https://http-pandas-app.onrender.com/)**.
+This application's deploy was made using **[Render plataform](https://dashboard.render.com/)**, which means you can use the running application accessing **[link](https://http-pandas.onrender.com/)**.
 
 ---
 
