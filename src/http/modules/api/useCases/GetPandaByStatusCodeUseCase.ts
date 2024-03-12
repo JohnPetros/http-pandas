@@ -37,26 +37,28 @@ export class GetPandaByStatusCodeUseCase
 
     let image = file.filePath
 
-    if (!isRaw) {
-      const pandaImageFile = new File(FOLDERS.tmp.images, `${crypto.randomUUID()}.jpg`)
+    const pandaImageFile = new File(FOLDERS.tmp.images, `${crypto.randomUUID()}.jpg`)
 
-      this.imageProcessingProvider.process(file.filePath)
-      this.imageProcessingProvider.resize({ width: 500, height: 500 })
+    this.imageProcessingProvider.process(file.filePath)
+    this.imageProcessingProvider.resize({ width: 550, height: 550 })
+
+    if (!isRaw) {
       this.imageProcessingProvider.addBorder()
       this.imageProcessingProvider.addText({
         body: statusMessage,
       })
-      this.imageProcessingProvider.convertToJpg()
-
-      const imageBuffer = await this.imageProcessingProvider.convertToBuffer()
-      pandaImageFile.write(imageBuffer)
-
-      image = pandaImageFile.filePath
-
-      setTimeout(async () => {
-        await pandaImageFile.delete()
-      }, 100)
     }
+
+    this.imageProcessingProvider.convertToJpg()
+
+    const imageBuffer = await this.imageProcessingProvider.convertToBuffer()
+    pandaImageFile.write(imageBuffer)
+
+    image = pandaImageFile.filePath
+
+    setTimeout(async () => {
+      await pandaImageFile.delete()
+    }, 100)
 
     const panda: Panda = {
       statusCode,

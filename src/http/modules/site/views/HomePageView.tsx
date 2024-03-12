@@ -3,9 +3,14 @@ import { IView } from '@app/interfaces/IView'
 
 import { RootLayout } from '@ui/layouts/RootLayout'
 import { Home } from '@ui/pages/Home'
+import { AppError } from '@utils/AppError'
+
+const DOMAIN = process.env.DOMAIN
 
 export class HomePageView implements IView {
   async render(http: IHttp): Promise<string> {
+    if (!DOMAIN) throw new AppError('App domain is not provided')
+
     const clipboardScript = await Bun.file(
       './node_modules/clipboard/dist/clipboard.min.js'
     ).text()
@@ -14,7 +19,7 @@ export class HomePageView implements IView {
 
     return http.renderView(
       <RootLayout scripts={[clipboardScript, prelineScript]}>
-        <Home />
+        <Home domain={DOMAIN} />
       </RootLayout>
     )
   }

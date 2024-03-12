@@ -1,7 +1,11 @@
 import { ClipboardButton } from '@ui/components/ClipboardButton'
 import { PandasSkeleton } from '@ui/components/PandasSkeleton'
 
-export function Home() {
+type HomeProps = {
+  domain: string
+}
+
+export function Home({ domain }: HomeProps) {
   return (
     <main class='bg-neutral-900 h-auto px-6 lg:px-0 pb-24'>
       <header class='flex items-center justify-end h-16'>
@@ -19,7 +23,7 @@ export function Home() {
 
       <div class='flex itens-center justify-between mx-auto rounded-md bg-neutral-800 w-full max-w-[40rem] mt-8 p-4 text-lg'>
         <span class='block py-2 text-neutral-300 text-sm sm:text-base'>
-          https://http.pandas/[status_code]
+          {domain}/[status_code]
         </span>
         <ClipboardButton />
       </div>
