@@ -1,6 +1,8 @@
-import { HTTP_STATUS } from '@constants/http-status'
-import { VALIDATION_ERRORS } from '@providers/validation/constants/validation-errors'
 import { z } from 'zod'
+
+import { HTTP_STATUS } from '@constants/http-status'
+
+import { VALIDATION_ERRORS } from '@providers/ValidationProvider/constants/validation-errors'
 
 const codes = Object.keys(HTTP_STATUS).map(String)
 

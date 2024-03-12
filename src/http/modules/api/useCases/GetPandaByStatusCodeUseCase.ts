@@ -3,12 +3,15 @@ import type { Panda } from '@core-types/Panda'
 import { IUseCase } from '@app/interfaces/IUseCase'
 
 import { IImageProcessingProvider } from '@providers/ImageProcessingProvider/IImageProcessingProvider'
-import { IValidationProvider } from '@providers/validation/IValidationProvider'
+
+import { GetPandaByStatusCodeRequest } from '../types/GetPandaByStatusCodeRequest'
 
 import { File } from '@utils/File'
 import { FOLDERS } from '@utils/File/constants/folders'
+
 import { HTTP_STATUS } from '@constants/http-status'
-import { GetPandaByStatusCodeRequest } from '../types/GetPandaByStatusCodeRequest'
+
+import { IValidationProvider } from '@providers/ValidationProvider/IValidationProvider'
 
 export class GetPandaByStatusCodeUseCase
   implements IUseCase<GetPandaByStatusCodeRequest, Panda>

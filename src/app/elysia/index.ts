@@ -3,11 +3,12 @@ import { html } from '@elysiajs/html'
 
 import { ElysiaRouter } from './ElysiaRouter'
 
-import { IApp } from 'app/interfaces/IApp'
+import { IApp } from '@app/interfaces/IApp'
 
 import { routes } from '@routes/index'
 import { AppError } from '@utils/AppError'
-import { VALIDATION_ERRORS } from '@providers/validation/constants/validation-errors'
+
+import { VALIDATION_ERRORS } from '@providers/ValidationProvider/constants/validation-errors'
 
 export class ElysiaApp implements IApp {
   private elysia: Elysia

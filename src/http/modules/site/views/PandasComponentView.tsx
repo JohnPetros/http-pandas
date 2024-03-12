@@ -15,12 +15,12 @@ export class PandasComponentView implements IView {
 
     const pandas = []
 
-    for (const statusCode of Object.keys(HTTP_STATUS)) {
-      const panda = await getPandaByStatusCodeUseCase.execute({
+    for await (const panda of Object.keys(HTTP_STATUS).map((statusCode) =>
+      getPandaByStatusCodeUseCase.execute({
         statusCode: statusCode as unknown as StatusCode,
         isRaw: false,
       })
-
+    )) {
       pandas.push({
         ...panda,
         image: `http://localhost:3000/api/raw/${panda.statusCode}`,

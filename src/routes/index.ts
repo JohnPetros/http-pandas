@@ -4,8 +4,8 @@ import { GetRandomPandaController } from 'http/modules/api/controllers/GetRandom
 import { GetPandaByStatusCodeController } from 'http/modules/api/controllers/GetPandaByStatusCodeController'
 import { GetRawPandaByStatusCodeController } from 'http/modules/api/controllers/GetRawPandaByStatusCodeController'
 import { GetAllPandasController } from 'http/modules/api/controllers/GetAllPandasController'
-import { HomePageView } from '@http/modules/ui/views/HomePageView'
-import { PandasComponentView } from '@http/modules/ui/views/PandasComponentView'
+import { HomePageView } from '@http/modules/site/views/HomePageView'
+import { PandasComponentView } from '@http/modules/site/views/PandasComponentView'
 
 const getPandaByStatusCodeController = new GetPandaByStatusCodeController()
 const getRawPandaByStatusCodeController = new GetRawPandaByStatusCodeController()
