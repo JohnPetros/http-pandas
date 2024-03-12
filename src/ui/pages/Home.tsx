@@ -1,9 +1,10 @@
-import { ClipboardButton } from '@site/components/ClipboardButton'
+import { ClipboardButton } from '@ui/components/ClipboardButton'
+import { PandasSkeleton } from '@ui/components/PandasSkeleton'
 
 export function Home() {
   return (
-    <main class='bg-neutral-900 h-auto px-6 lg:px-0 pb-6'>
-      <header class='flex items-center justify-end h-24'>
+    <main class='bg-neutral-900 h-auto px-6 lg:px-0 pb-24'>
+      <header class='flex items-center justify-end h-16'>
         <a href='/' target='_blank' rel='noreferrer'>
           <img src='https://usehooks.com/img/icon-github.svg' alt='' />
         </a>
@@ -23,7 +24,7 @@ export function Home() {
         <ClipboardButton />
       </div>
 
-      <div hx-get='/ui/pandas' hx-trigger='load' hx-swap='outerHTML' />
+      <PandasSkeleton />
     </main>
   )
 }
