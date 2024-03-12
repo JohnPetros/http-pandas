@@ -21,11 +21,11 @@
 
 ## 🖥️ About the project
 
-HTTP Pandas is a collection of cute and funny panda images that more-or-less represent various HTTP status codes, inspired by the likes of HTTP Cats and HTTP Dogs.
+HTTP Pandas is a collection of cute and funny panda images that more-or-less represent various HTTP status codes, inspired by the likes of [HTTP Cats](https://http.cat/) and [HTTP Dogs](https://httpstatusdogs.com/).
 
 To use it simply Embed an image using the base URL https://http-pandas/api/{status_code} and replace {status_code} with an HTTP status code.
 
-the goal of developing this project was learn the basics amazing features of [Bun](https://bun.sh/), a fast JavaScript runtime, package manager, bundler, test runner etc etc... And [Elysia](https://elysiajs.com/), a ergonomic framework to build a server. 
+the goal of developing this project was learn the basic but amazing features of [Bun](https://bun.sh/), a fast JavaScript runtime, package manager, bundler, test runner etc etc... And [Elysia](https://elysiajs.com/), a ergonomic framework to build a server.
 
 ### ⏹️ Demonstration
 
@@ -33,7 +33,7 @@ the goal of developing this project was learn the basics amazing features of [Bu
   <tr>
     <td align="center" width="700">
     <span>Página da Urna funcionando<br/></span>
-    <img alt="Home page" src=".github/http-pandas-funcionando.gif" alt="Demonstração da urna funcionando" />
+    <img src=".github/app-preview.gif" alt="Preview of the application" />
     </td>
   </tr>
 </table>
@@ -70,7 +70,7 @@ the goal of developing this project was learn the basics amazing features of [Bu
 
 ## 🛠️ Technologies and tools
 
-Este projeto foi desenvolvido usando as seguintes tecnologias:
+This project was developed using the following technologies:
 
 - **[Bun](https://bun.sh/)** as runtime, package manager and bundler
 
@@ -117,50 +117,44 @@ $ bun install
 $ bun dev
 
 ```
+> Probably the aplication will be running on http://localhost:3000
 ---
 
 ## 🚚 Deploy
 
-O deploy dessa aplicação foi realizada usando a plataforma da **[Render](https://dashboard.render.com/)**, o que implica dizer que você pode acessar aplicação funcionando acessando esse **[link](https://http-pandas-app.onrender.com/)**.
+This application's deploy was made using **[Render plataform](https://dashboard.render.com/)**, which means you can use the running application accessing **[link](https://http-pandas-app.onrender.com/)**.
 
 ---
 
-## 💪 Como contribuir
+## 🤝 how to Contribute
 
 ```bash
 
-# Fork este repositório
+# Fork this repo
 $ git clone https://github.com/JohnPetros/http-pandas.git
 
-# Cria uma branch com a sua feature
-$ git checkout -b minha-feature
+# Create a nem branch for the new feature
+$ git checkout -b new-feature
 
-# Commit suas mudanças:
-$ git commit -m 'feat: Minha feature'
+# Commit your changes:
+$ git commit -m 'feat: <New Feature>'
 
-# Push sua branch:
-$ git push origin minha-feature
+# Push your branch:
+$ git push origin new-feature
 
 ```
+> You must replace new-feature with the name the feature you are adding
 
-> Você deve substituir 'minha-feature' pelo nome da feature que você está adicionando
-
-> Você também pode abrir um [nova issue](https://github.com/JohnPetros/http-pandas/issues) a respeito de algum problema, dúvida ou sugestão para o projeto. Ficarei feliz em poder ajudar, assim como melhorar este projeto
-
----
-
-## 🎨 Layout
-
-O design do projeto pode ser acessada nesse [link](https://www.figma.com/file/8DRd8OlhogKoCcofQD1QX4/http-pandas-Industrial?type=design&t=pbdOp6tdnmj2kTmc-6).
+> You can also open a [new issue](https://github.com/JohnPetros/http-pandas/issues) about some problem, question or sugestion for the project. I will be happy to help as well as improve this application
 
 ---
 
 ## 📝 Licença
 
-Esta aplicação está sob licença do MIT. Consulte o [Arquivo de licença](LICENSE) para obter mais detalhes sobre.
+This application is under MIT Licence. See [the licence file](LICENSE) to get more details about it.
 
 ---
 
 <p align="center">
-  Feito com 💜 por John Petros 👋🏻
+  Made with 💜 by John Petros 👋🏻
 </p>
