@@ -1,6 +1,6 @@
 import type { Panda } from '@core-types/Panda'
 
-import { SharpImageProcessingProvider } from '@providers/imageProcessingProvider/sharp'
+import { SharpImageProcessingProvider } from '@providers/ImageProcessingProvider/sharp'
 import { IFactory } from '@app/interfaces/IFactory'
 import { GetRandomPandaUseCase } from '../useCases/GetRandomPandaUseCase'
 

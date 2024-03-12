@@ -2,9 +2,10 @@ import { ICrontroller } from 'app/interfaces/ICrontroller'
 import { IHttp } from 'app/interfaces/IHttp'
 
 import { GetRandomPandaFactory } from '../factories/GetRandomPandaByStatusCodeFactory'
+import { Response } from '@http/types/Response'
 
 export class GetRawRandomPandaController implements ICrontroller {
-  async handle(http: IHttp): Promise<JSON> {
+  async handle(http: IHttp): Promise<Response> {
     const getRandomPandaFactory = new GetRandomPandaFactory()
     const getRandomPandaUseCase = getRandomPandaFactory.getUseCase()
 

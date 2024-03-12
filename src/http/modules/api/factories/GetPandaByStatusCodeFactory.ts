@@ -3,7 +3,7 @@ import type { Panda } from '@core-types/Panda'
 import { GetPandaByStatusCodeUseCase } from '../useCases/GetPandaByStatusCodeUseCase'
 import type { GetPandaByStatusCodeRequest } from '../types/GetPandaByStatusCodeRequest'
 
-import { SharpImageProcessingProvider } from '@providers/imageProcessingProvider/sharp'
+import { SharpImageProcessingProvider } from '@providers/ImageProcessingProvider/sharp'
 import { ZodValidationProvider } from '@providers/validation/zod'
 import { IFactory } from '@app/interfaces/IFactory'
 
@@ -18,7 +18,7 @@ export class GetPandaByStatusCodeFactory
 
     this.useCase = new GetPandaByStatusCodeUseCase(
       zodValidationProvider,
-      imageProcessorProvider,
+      imageProcessorProvider
     )
   }
 

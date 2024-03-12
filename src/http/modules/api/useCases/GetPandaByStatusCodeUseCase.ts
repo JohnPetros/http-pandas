@@ -2,7 +2,7 @@ import type { Panda } from '@core-types/Panda'
 
 import { IUseCase } from '@app/interfaces/IUseCase'
 
-import { IImageProcessingProvider } from '@providers/imageProcessingProvider/IImageProcessingProvider'
+import { IImageProcessingProvider } from '@providers/ImageProcessingProvider/IImageProcessingProvider'
 import { IValidationProvider } from '@providers/validation/IValidationProvider'
 
 import { File } from '@utils/File'
@@ -18,16 +18,13 @@ export class GetPandaByStatusCodeUseCase
 
   constructor(
     validationProvider: IValidationProvider,
-    imageProcessingProvider: IImageProcessingProvider,
+    imageProcessingProvider: IImageProcessingProvider
   ) {
     this.validationProvider = validationProvider
     this.imageProcessingProvider = imageProcessingProvider
   }
 
-  async execute({
-    statusCode,
-    isRaw,
-  }: GetPandaByStatusCodeRequest): Promise<Panda> {
+  async execute({ statusCode, isRaw }: GetPandaByStatusCodeRequest): Promise<Panda> {
     await this.validationProvider.validateStatusCode(statusCode)
 
     const filename = `${statusCode}.jpg`
@@ -35,12 +32,11 @@ export class GetPandaByStatusCodeUseCase
 
     const statusMessage = HTTP_STATUS[statusCode]
 
-    const pandaImageFile = new File(
-      FOLDERS.tmp.images,
-      crypto.randomUUID() + '.jpg',
-    )
+    let image = file.filePath
 
     if (!isRaw) {
+      const pandaImageFile = new File(FOLDERS.tmp.images, `${crypto.randomUUID()}.jpg`)
+
       this.imageProcessingProvider.process(file.filePath)
       this.imageProcessingProvider.resize({ width: 500, height: 500 })
       this.imageProcessingProvider.addBorder()
@@ -51,16 +47,18 @@ export class GetPandaByStatusCodeUseCase
 
       const imageBuffer = await this.imageProcessingProvider.convertToBuffer()
       pandaImageFile.write(imageBuffer)
-    }
 
-    setTimeout(async () => {
-      await pandaImageFile.delete()
-    }, 100)
+      image = pandaImageFile.filePath
+
+      setTimeout(async () => {
+        await pandaImageFile.delete()
+      }, 100)
+    }
 
     const panda: Panda = {
       statusCode,
       statusMessage: HTTP_STATUS[statusCode],
-      image: pandaImageFile.filePath,
+      image,
     }
 
     return panda

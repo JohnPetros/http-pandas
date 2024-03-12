@@ -4,6 +4,10 @@ export const ROUTES = {
     getRandomRawPanda: '/api/raw/random',
     getPandaByStatusCode: '/api/:statusCode',
     getRawPandayStatusCode: '/api/raw/:statusCode',
+    getAllPandas: '/api/all',
+  },
+  ui: {
+    pandas: '/ui/pandas',
   },
   index: '/',
 }

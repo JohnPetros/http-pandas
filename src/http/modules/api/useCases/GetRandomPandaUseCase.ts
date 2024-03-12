@@ -7,7 +7,7 @@ import { HTTP_STATUS } from '@constants/http-status'
 
 import { File } from '@utils/File'
 import { FOLDERS } from '@utils/File/constants/folders'
-import { IImageProcessingProvider } from '@providers/imageProcessingProvider/IImageProcessingProvider'
+import { IImageProcessingProvider } from '@providers/ImageProcessingProvider/IImageProcessingProvider'
 
 export class GetRandomPandaUseCase implements IUseCase<boolean, Panda> {
   private imageProcessingProvider: IImageProcessingProvider
@@ -17,9 +17,7 @@ export class GetRandomPandaUseCase implements IUseCase<boolean, Panda> {
   }
 
   async execute(isRaw: boolean): Promise<Panda> {
-    const randomIndex = Math.floor(
-      Math.random() * Object.keys(HTTP_STATUS).length,
-    )
+    const randomIndex = Math.floor(Math.random() * Object.keys(HTTP_STATUS).length)
 
     const randomStatusCode = Object.keys(HTTP_STATUS)[
       randomIndex
@@ -31,10 +29,7 @@ export class GetRandomPandaUseCase implements IUseCase<boolean, Panda> {
 
     const file = new File(FOLDERS.public.images, filename)
 
-    const pandaImageFile = new File(
-      FOLDERS.tmp.images,
-      crypto.randomUUID() + '.jpg',
-    )
+    const pandaImageFile = new File(FOLDERS.tmp.images, crypto.randomUUID() + '.jpg')
 
     if (!isRaw) {
       this.imageProcessingProvider.process(file.filePath)
