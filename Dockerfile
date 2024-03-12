@@ -11,4 +11,4 @@ COPY . .
 
 EXPOSE 3000
 
-CMD ["bun", "src/server.ts"]
+CMD ["bun", "index.ts"]
