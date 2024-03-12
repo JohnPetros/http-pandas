@@ -1,6 +1,8 @@
 {
   "compilerOptions": {
-    "lib": ["ESNext"],
+    "lib": [
+      "ESNext"
+    ],
     "module": "esnext",
     "target": "esnext",
     "baseUrl": "./src",
@@ -12,22 +14,41 @@
     "strict": true,
     "downlevelIteration": true,
     "skipLibCheck": true,
-    "jsx": "react-jsx",
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
     "allowJs": true,
+    "jsx": "react",
+    "jsxFactory": "Html.createElement",
+    "jsxFragmentFactory": "Html.Fragment",
+    "plugins": [{ "name": "@kitajs/ts-html-plugin" }],
     "types": [
       "bun-types" // add Bun global
     ],
     "paths": {
-      "@app/*": ["app/*"],
-      "@routes/*": ["routes/*"],
-      "@core-types/*": ["@types/*"],
-      "@constants/*": ["constants/*"],
-      "@modules/*": ["modules/*"],
-      "@configs/*": ["configs/*"],
-      "@providers/*": ["providers/*"],
-      "@utils/*": ["utils/*"]
+      "@app/*": [
+        "app/*"
+      ],
+      "@routes/*": [
+        "routes/*"
+      ],
+      "@core-types/*": [
+        "@types/*"
+      ],
+      "@constants/*": [
+        "constants/*"
+      ],
+      "@http/*": [
+        "http/*"
+      ],
+      "@ui/*": [
+        "ui/*"
+      ],
+      "@providers/*": [
+        "providers/*"
+      ],
+      "@utils/*": [
+        "utils/*"
+      ]
     },
   },
 }
