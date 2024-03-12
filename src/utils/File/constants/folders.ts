@@ -14,7 +14,7 @@ export const FOLDERS = {
         '..',
         'public',
         'pages',
-        'index.html',
+        'index.html'
       ),
     },
   },

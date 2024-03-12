@@ -1,11 +1,15 @@
-export function ClipboardButton() {
+type ClipboardButtonProps = {
+  text: string
+}
+
+export function ClipboardButton({ text }: ClipboardButtonProps) {
   return (
     <div class='inline-flex items-center gap-x-3'>
       <span
         id='hs-clipboard-basic'
         class='sr-only text-sm font-medium text-gray-100 dark:text-white'
       >
-        https://http.pandas/
+        {text}
       </span>
 
       <button

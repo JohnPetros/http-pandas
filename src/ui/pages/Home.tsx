@@ -23,9 +23,9 @@ export function Home({ domain }: HomeProps) {
 
       <div class='flex itens-center justify-between mx-auto rounded-md bg-neutral-800 w-full max-w-[40rem] mt-8 p-4 text-lg'>
         <span class='block py-2 text-neutral-300 text-sm sm:text-base'>
-          {domain}/[status_code]
+          {domain}/api/[status_code]
         </span>
-        <ClipboardButton />
+        <ClipboardButton text={`${domain}/api/`} />
       </div>
 
       <PandasSkeleton />

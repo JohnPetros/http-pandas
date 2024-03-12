@@ -5,7 +5,7 @@ import { RootLayout } from '@ui/layouts/RootLayout'
 import { Home } from '@ui/pages/Home'
 import { AppError } from '@utils/AppError'
 
-const DOMAIN = process.env.DOMAIN
+const DOMAIN = Bun.env.DOMAIN
 
 export class HomePageView implements IView {
   async render(http: IHttp): Promise<string> {
