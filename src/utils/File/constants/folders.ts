@@ -21,4 +21,5 @@ export const FOLDERS = {
   tmp: {
     images: path.resolve(dirname, '..', '..', '..', '..', '.tmp', 'images'),
   },
+  cache: path.resolve(dirname, '..', '..', '..', 'cache'),
 }
