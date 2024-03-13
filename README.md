@@ -77,6 +77,8 @@ This project was developed using the following technologies:
 
 - **[Sharp](https://sharp.pixelplumbing.com/)** as image processor
 
+- **[Redis](https://redis.io/)** to provide data caching
+
 - **[Zod](https://zod.dev/)** as data schema validator
 
 - **[HTMX](https://htmx.org/)** to access the server side features directly in [HTML](https://developer.mozilla.org/pt-BR/docs/Web/HTML)
