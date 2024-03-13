@@ -52,7 +52,7 @@ export class GetPandaByStatusCodeUseCase
     this.imageProcessingProvider.convertToJpg()
 
     const imageBuffer = await this.imageProcessingProvider.convertToBuffer()
-    pandaImageFile.write(imageBuffer)
+    pandaImageFile.addChunck(imageBuffer)
 
     image = pandaImageFile.filePath
 

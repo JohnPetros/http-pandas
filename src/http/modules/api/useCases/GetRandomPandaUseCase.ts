@@ -29,7 +29,7 @@ export class GetRandomPandaUseCase implements IUseCase<boolean, Panda> {
 
     const file = new File(FOLDERS.public.images, filename)
 
-    const pandaImageFile = new File(FOLDERS.tmp.images, crypto.randomUUID() + '.jpg')
+    const pandaImageFile = new File(FOLDERS.tmp.images, `${crypto.randomUUID()}.jpg`)
 
     if (!isRaw) {
       this.imageProcessingProvider.process(file.filePath)
@@ -41,7 +41,7 @@ export class GetRandomPandaUseCase implements IUseCase<boolean, Panda> {
       this.imageProcessingProvider.convertToJpg()
 
       const imageBuffer = await this.imageProcessingProvider.convertToBuffer()
-      pandaImageFile.write(imageBuffer)
+      pandaImageFile.addChunck(imageBuffer)
     }
 
     setTimeout(async () => {
