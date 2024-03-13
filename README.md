@@ -1,5 +1,5 @@
 <h1 align="center">
-  HTTP Lions 🦁
+  HTTP Pandas 🐼     
 </h1>
 
 <div align="center">
