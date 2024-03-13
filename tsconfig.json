@@ -28,11 +28,14 @@
       "@app/*": [
         "app/*"
       ],
-      "@routes/*": [
-        "routes/*"
+      "@cache/*": [
+        "cache/*"
       ],
       "@core-types/*": [
         "@types/*"
+      ],
+      "@routes/*": [
+        "routes/*"
       ],
       "@constants/*": [
         "constants/*"
