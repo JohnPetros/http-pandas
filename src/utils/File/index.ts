@@ -18,29 +18,36 @@ export class File {
     this.bunFile = Bun.file(filePath)
   }
 
+  addChunck(chunck: string | Buffer) {
+    const writer = this.bunFile.writer()
+    writer.write(chunck)
+  }
+
+  read() {
+    return this.bunFile
+  }
+
   async exists() {
     try {
-      const oi = await this.bunFile.exists()
-      console.log({ oi })
+      await this.bunFile.exists()
     } catch (error) {
       throw new AppError(FILE_ERRORS.exists, 500)
     }
   }
 
-  write(chunck: string | Buffer) {
-    console.log('WRITE')
-    const writer = this.bunFile.writer()
-    writer.write(chunck)
+  async readText() {
+    await this.exists()
+
+    return await this.bunFile.text()
   }
 
-  get() {
-    return this.bunFile
+  async write(text: string) {
+    Bun.write(this.filePath, text)
   }
 
   async delete() {
     try {
       fs.unlinkSync(this.filePath)
-      console.log('DELETE')
     } catch (error) {
       throw new AppError(FILE_ERRORS.delete, 500)
     }
