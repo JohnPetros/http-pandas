@@ -1,5 +1,5 @@
 <h1 align="center">
-  HTTP Bears 🐻
+  HTTP Ducks 🦆
 </h1>
 
 <div align="center">
