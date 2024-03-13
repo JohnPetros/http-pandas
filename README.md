@@ -1,5 +1,5 @@
 <h1 align="center">
-  HTTP Pandas 🐼     
+  HTTP Pandas 🐼
 </h1>
 
 <div align="center">
@@ -51,11 +51,11 @@ the goal of developing this project was learn the basic but amazing features of 
   - add border
   - add text
   - convert to buffer
-  
+
 #### Http Panda
 
 - [x] Should return panda for each http status code provided
-- [x] Each panda should have image, http status code and http status description 
+- [x] Each panda should have image, http status code and http status description
 
 #### Website
 
@@ -116,7 +116,9 @@ $ bun install
 $ bun dev
 
 ```
+
 > Probably the aplication will be running on http://localhost:3000
+
 ---
 
 ## 🚚 Deploy
@@ -142,6 +144,7 @@ $ git commit -m 'feat: <New Feature>'
 $ git push origin new-feature
 
 ```
+
 > You must replace new-feature with the name the feature you are adding
 
 > You can also open a [new issue](https://github.com/JohnPetros/http-pandas/issues) about some problem, question or sugestion for the project. I will be happy to help as well as improve this application
