@@ -77,15 +77,15 @@ This project was developed using the following technologies:
 
 - **[Sharp](https://sharp.pixelplumbing.com/)** as image processor
 
-- **[Redis](https://redis.io/)** to provide data caching
+- **[Redis](https://redis.io/)** for providing data caching
 
 - **[Zod](https://zod.dev/)** as data schema validator
 
-- **[HTMX](https://htmx.org/)** to access the server side features directly in [HTML](https://developer.mozilla.org/pt-BR/docs/Web/HTML)
+- **[HTMX](https://htmx.org/)** for accessing the server side features directly in [HTML](https://developer.mozilla.org/pt-BR/docs/Web/HTML)
 
-- **[TailwindCSS](https://tailwindcss.com/)** to style the website
+- **[TailwindCSS](https://tailwindcss.com/)** for styling the website
 
-- **[Preline UI](https://preline.co/)** to build accessible components with TailwindCSS
+- **[Preline UI](https://preline.co/)** for building accessible components with TailwindCSS
 
 > For more details about the project's dependencies like specifi versions of each dependency, se [package.json](https://github.com/JohnPetros/http-pandas/blob/main/package.json)
 
