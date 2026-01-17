@@ -33,7 +33,7 @@ export class PandasComponentView implements IView {
       )) {
         pandas.push({
           ...panda,
-          image: `http://localhost:3000/api/raw/${panda.statusCode}`,
+          image: `${Bun.env.DOMAIN}/api/raw/${panda.statusCode}`,
         })
       }
 
